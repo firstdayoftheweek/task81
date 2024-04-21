@@ -1,0 +1,24 @@
+<html lang="en" layout:decorate="~{layout/main.html}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<body>
+<div layout:fragment="custom-content">
+    <div class="row">
+        <div class="col-sm-6" th:each="app:${appRequests}">
+            <div class="card">
+                <div class="card-body">
+                    <span>
+                        <h5 class="card-title" th:text="${app.getUserName()}"></h5>
+                    </span>
+                    Курс: <p5  th:text="${app.getCourse().getName()}"></p5>
+                    <br>
+                    <p5 class="card-text" th:text="${app.getCommentary()}"></p5>
+                    <br>
+                    Тел: <p5 class="card-text" th:text="${app.getPhone()}"></p5>
+                    <a th:href="@{'/details/'+ ${app.getId()}}" style="text-decoration: none">Подробнее</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html lang="en" layout:decorate="~{layout/main.html}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+    <div class="row mt-3">
+        <div class="col-6 mx-auto">
+            <form th:action="@{'/addCourse'}" method="post">
+                <div class="mb-3">
+                    <label class="form-label">НАЗВАНИЕ:</label>
+                    <input name="name" type="text" class="form-control" placeholder="Название:">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">ЦЕНА:</label>
+                    <input name="price" type="text" class="form-control" placeholder="Цена:">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" >ОПИСАНИЕ:</label>
+                    <textarea name="desc" class="form-control" placeholder="Описание"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success">Добавить Курс</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

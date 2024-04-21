@@ -1,0 +1,32 @@
+<html lang="en" layout:decorate="~{layout/main.html}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+  <div class="row mt-3">
+    <div class="col-6 mx-auto">
+      <form th:action="@{'/addRequest'}" method="post">
+        <div class="mb-3">
+          <label class="form-label">ФИО:</label>
+          <input name="username" type="text" class="form-control" id="exampleFormControlInput" placeholder="ФИО:">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" >Курс:</label>
+          <select name="courseId" class="form-control" >
+            <option selected="selected" th:each="course:${coursesList}" th:text="${course.getName()+' / '+ course.getPrice() + ' KZT'}" th:value="${course.getId()}">Выберите Курс</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Телефон:</label>
+          <input name="phoneNumber" type="number" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" >Комментарии:</label>
+          <textarea name="commentary" class="form-control" placeholder="Комментарии"></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Добавить Заявку</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

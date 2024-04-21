@@ -1,0 +1,28 @@
+<html lang="en" layout:decorate="~{layout/main.html}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+  <div class="row">
+    <table class="table table-success table-striped">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">PRICE</th>
+        <th scope="col" width="10%">DETAILS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="course:${courses}">
+        <td th:text="${course.getId()}"></td>
+        <td th:text="${course.getName()}"></td>
+        <td th:text="${course.getPrice()}"></td>
+        <td >
+          <a th:href="@{'coursesDetails/'+${course.getId()}}" class="btn btn-success">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
